@@ -1,5 +1,7 @@
-/* Shows the basics of importing a CSV file and appending it to a Pandas array. Then works
-out the male and female acceptance rates for a period at UCB */
+'''
+Shows the basics of importing a CSV file and appending it to a Pandas array. Then works
+out the male and female acceptance rates for a period at UCB.
+'''
 
 import numpy as np
 import csv
