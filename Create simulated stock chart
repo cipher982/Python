@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+import random
+
+# Make matplotlib show our plots inline (good for working with notebooks)
+%matplotlib inline
+
+# Can use any length of number here, be sure to alter lines 8 and 10
+stocks = [0] * 5000
+i = 2
+while i < len(stocks):
+    direction = random.randint(1,7)
+    if direction == 1:
+        stocks[i] = stocks[i-1] - 2
+    if direction == 2:
+        stocks[i] = stocks[i-1] - 1
+    if direction == 3:
+        stocks[i] = stocks[i-1]
+    if direction == 4:
+        stocks[i] = stocks[i-1] + 1
+    if direction == 5:
+        stocks[i] = stocks[i-1] + 2
+    if direction == 6:
+        stocks[i] = stocks[i-1] + 5
+    if direction == 7:
+        stocks[i] = stocks[i-1] - 5
+    i += 1
+
+plt.plot(stocks)
