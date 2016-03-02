@@ -1,0 +1,37 @@
+import numpy as np
+import csv
+import pandas as pd
+
+ucb_raw = csv.reader(open('C:\\ML\\ucb.csv'))
+header = ucb_raw.next()
+ucb = []   # Create empty list to contain future data
+for row in ucb_raw:
+    ucb.append(row)
+ucb = np.array(ucb)
+
+menAdmit  = []
+menReject = []
+femAdmit  = []
+femReject = []
+
+for row in ucb:
+    if row[1] == 'Male':
+        if row[0] == 'Admitted':
+            menAdmit.append(row)
+        else:
+            menReject.append(row)
+    if row[1] == 'Female':
+        if row[0] == 'Admitted':
+            femAdmit.append(row)
+        else:
+            femReject.append(row)
+menAdmit  = np.array(menAdmit)
+menReject = np.array(menReject)
+femAdmit  = np.array(femAdmit)
+femReject = np.array(femReject)
+
+menAdmitRate = (sum(menAdmit[:,3]) / (sum(menAdmit[:,3]) + sum(menReject[:,3]))) * 100
+femAdmitRate = (sum(femAdmit[:,3]) / (sum(femAdmit[:,3]) + sum(femReject[:,3]))) * 100
+
+
+print 'The men\'s acceptance rate is %d\, while the womens acceptance rate is %d' (menAdmitRate, femAdmitRate)
