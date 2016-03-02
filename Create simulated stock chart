@@ -1,4 +1,5 @@
-/* Charts a simulated stock return over a period of 5000 days, the price can move up or down by -5,-2,-1,0,1,2, or 5 each
+'''
+Charts a simulated stock return over a period of 5000 days, the price can move up or down by -5,-2,-1,0,1,2, or 5 each
 day. Running it over and over can create wildly different returns, displaying just how possible it is for a market equity
 to have large swings that may not be possible to fundamentally or technically explain, though humans will strive to find
 a pattern in the chaos anyways. The array can be set at any length you feel, try it out to see if you can notice anything
@@ -6,7 +7,8 @@ different.
 
 * I do not necessarily subscribe to an efficient market hypothesis. Whether or not markets or individual stocks may be
 soundly predictable, there is analysis done to show that at least a sizable amount of it is not at the least purely 
-random (accounting for drift or stochastic volatility over time),  or as in popular parlance 'A Random Walk'.*/
+random (accounting for drift or stochastic volatility over time),  or as in popular parlance 'A Random Walk'.
+'''
 
 import matplotlib.pyplot as plt
 import random
