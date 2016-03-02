@@ -1,16 +1,16 @@
 '''
-Read a string and count the occurrences of each word.
+Read a string and count the occurrences of each word in descending order.
 '''
 
 import numpy as np
-spams = "offer is secret click secret link secret sports link play sports today went play sports secret sports event sport is today sport costs money"
-print np.size(spams)
+import operator
+myString = "offer is secret click secret link secret sports link play sports today went play sports secret sports event sport is today sport costs money"
 
-count = {}
-for w in spams.split():
-    if w in count:
-        count[w] += 1
+counts = {}
+for w in myString.split():
+    if w in counts:
+        counts[w] += 1
     else:
-        count[w] = 1
-for word, times in count.items():
+        counts[w] = 1
+for word, times in sorted(counts.items(), key=lambda x: x[1], reverse = True):
     print "%s was found %d times" % (word, times)
